@@ -1,12 +1,22 @@
 import React from 'react';
 
-// import { Container } from './styles';
+import {
+    Container,
+    Content,
+    Logo,
+    Form,
+} from './styles';
 
 const SignUp: React.FC = () => {
     return (
-        <div>
-            <p>Hello SignUp</p>
-        </div>
+        <Container>
+            <Content>
+                <Logo />
+                <Form>
+                    <p>Informe seus dados</p>
+                </Form>
+            </Content>
+        </Container>
     );
 }
 
