@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 import {
     Container,
@@ -38,6 +39,8 @@ const SignUp: React.FC = () => {
                         <Link href="#"> Termos de Uso</Link>
                         </Info>
                     </ContainerUseTerms>
+
+                    <Button type="submit">Cadastrar</Button>
                 </Form>
             </Content>
         </Container>
