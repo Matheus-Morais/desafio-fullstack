@@ -2,9 +2,14 @@ import styled from 'styled-components';
 
 import Profitfy from '../../assets/logo.png';
 
-export const Container = styled.div`
-    height: 100vh;
+interface InfoProps {
+    fontWeight: string,
+    fontSize: string,
+    marginTop: string,
+    marginBottom: string,
+}
 
+export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +32,7 @@ export const Logo = styled.img.attrs({
     flex: 1;
     width: 363px;
     margin-bottom: 26px;
+    margin-top: 128px;
 `;
 
 export const Form = styled.div`
@@ -40,17 +46,25 @@ export const Form = styled.div`
 
     width: 100%;
     max-width: 547px;
+`;
 
-    p {
-        margin-top: 44px;
-        margin-bottom: 22px;
-        font-weight: 600;
-        font-size: 16px;
-        line-height: 22px;
+export const Info = styled.p<InfoProps>`
+    line-height: 22px;
+    color: #94A3B3;
+    letter-spacing: 0.01em;
 
-        letter-spacing: 0.01em;
+    margin-top: ${props => props.marginTop}px;
+    margin-bottom: ${props => props.marginBottom}px;
+    font-weight: ${props => props.fontWeight};
+    font-size: ${props => props.fontSize}px;
+`;
 
-        color: #94A3B3;
-    }
+export const ContainerUseTerms = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+export const Link = styled.a`
+    text-decoration: none;
 `;
 
