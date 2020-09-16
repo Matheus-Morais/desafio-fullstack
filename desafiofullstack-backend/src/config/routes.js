@@ -1,4 +1,5 @@
 const express = require('express')
+const controllers = require('../api')
 
 module.exports = function (server) {
     const serverV1 = express.Router()
@@ -8,4 +9,6 @@ module.exports = function (server) {
         res.type('text/plain')
         res.send(`Desafio FullStack Backend - v1`)
     })
+
+    serverV1.post('/new-user', controllers.postUser)
 }
