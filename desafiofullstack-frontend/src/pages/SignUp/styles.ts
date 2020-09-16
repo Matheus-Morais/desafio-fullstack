@@ -68,3 +68,28 @@ export const Link = styled.a`
     text-decoration: none;
 `;
 
+export const ContainerOptions = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 16px;
+    margin-bottom: 346px;
+
+    width: 100%;
+    max-width: 547px;
+`;
+
+export const LinkOptions = styled.a`
+    text-decoration: none;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    /* identical to box height */
+
+    letter-spacing: 0.01em;
+
+    color: #fff;
+`;
+

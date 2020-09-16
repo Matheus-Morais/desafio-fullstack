@@ -10,7 +10,9 @@ import {
     Info,
     Form,
     ContainerUseTerms,
-    Link
+    Link,
+    ContainerOptions,
+    LinkOptions
 } from './styles';
 
 const SignUp: React.FC = () => {
@@ -41,7 +43,13 @@ const SignUp: React.FC = () => {
                     </ContainerUseTerms>
 
                     <Button type="submit">Cadastrar</Button>
+
                 </Form>
+                <ContainerOptions>
+                    <LinkOptions href="#">Esqueceu sua senha?</LinkOptions>
+
+                    <LinkOptions href="#">Entrar</LinkOptions>
+                </ContainerOptions>
             </Content>
         </Container>
     );
