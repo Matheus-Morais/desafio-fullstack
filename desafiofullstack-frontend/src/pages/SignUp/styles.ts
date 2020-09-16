@@ -32,7 +32,7 @@ export const Logo = styled.img.attrs({
     flex: 1;
     width: 363px;
     margin-bottom: 26px;
-    margin-top: 128px;
+    margin-top: 30px;
 `;
 
 export const Form = styled.div`
@@ -62,6 +62,9 @@ export const Info = styled.p<InfoProps>`
 export const ContainerUseTerms = styled.div`
     display: flex;
     flex-direction: row;
+
+    margin-left: 5px;
+    margin-right: 5px;
 `;
 
 export const Link = styled.a`
@@ -74,7 +77,7 @@ export const ContainerOptions = styled.div`
     justify-content: space-between;
 
     margin-top: 16px;
-    margin-bottom: 346px;
+    margin-bottom: 30px;
 
     width: 100%;
     max-width: 547px;
