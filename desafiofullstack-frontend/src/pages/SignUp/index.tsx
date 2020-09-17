@@ -20,17 +20,23 @@ import {
     LinkOptions
 } from './styles';
 
+interface SignUpFormData {
+    name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+    password: string;
+    confirm_password: string;
+}
+
 const SignUp: React.FC = () => {
     //referencia do formulário
     const formRef = useRef<FormHandles>(null)
 
     //Função que verifica os dados antes de enviar para api
-    const handleSubmit = useCallback(async (data: object) => {
+    const handleSubmit = useCallback(async (data: SignUpFormData) => {
         //Instacia a referencia do formulario sem error
         formRef.current?.setErrors({})
-
-        //Regex para verificar se o telefone é válido
-        const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
         //Schema do yup para validar os dados
         const schema = Yup.object().shape({
@@ -52,11 +58,9 @@ const SignUp: React.FC = () => {
                 const errors = getValidationErrors(e)
                 //Seta os erros no formulário
                 formRef.current?.setErrors(errors)
-                console.log(errors)
                 return
             }
         }
-
         return
     }, [])
 
