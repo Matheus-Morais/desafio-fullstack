@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, InputHTMLAttributes } from 'react';
 import { useField } from '@unform/core';
+import { FiAlertCircle } from 'react-icons/fi';
 
 import {
     Container,
-    Icon
+    Icon,
+    Error
 } from './styles';
 
 import UserAltSolid from '../../assets/user-alt-solid.png';
@@ -19,7 +21,7 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 const Input: React.FC<InputProps> = ({ name, iconName, ...rest }) => {
     const inputRef = useRef<HTMLInputElement>(null)
-    const { fieldName, defaultValue, registerField } = useField(name)
+    const { fieldName, defaultValue, registerField, error } = useField(name)
 
     //Retorna o determinado icon para o input requisitado
     function getIcon() {
@@ -56,6 +58,11 @@ const Input: React.FC<InputProps> = ({ name, iconName, ...rest }) => {
                 ref={inputRef}
                 {...rest}
             />
+            {error &&
+                <Error title={error}>
+                    <FiAlertCircle color="#c53030" size={18} />
+                </Error>
+            }
         </Container>
     )
 }

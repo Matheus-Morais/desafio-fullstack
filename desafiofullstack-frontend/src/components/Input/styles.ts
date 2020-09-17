@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import Tooltip from '../../components/Tooltip';
+
 export const Container = styled.div`
     background: #fff;
     padding: 11px 12px;
@@ -33,3 +35,19 @@ export const Icon = styled.img`
     margin-right: 12px;
 `;
 
+export const Error = styled(Tooltip)`
+    height: 18px;
+
+    svg {
+        margin: 0;
+    }
+
+    span {
+        background: #c53030;
+        color: #fff;
+
+        &::before {
+            border-color: #c53030 transparent;
+        }
+    }
+`;
