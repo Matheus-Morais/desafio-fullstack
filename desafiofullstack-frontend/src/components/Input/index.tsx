@@ -21,19 +21,19 @@ const Input: React.FC<InputProps> = ({ name, iconName, ...rest }) => {
     //Retorna o determinado icon para o input requisitado
 
     function getIcon() {
-        if (iconName == "UserAltSolid") {
+        if (iconName === "UserAltSolid") {
             return UserAltSolid
         }
-        else if (iconName == "UserCircleSolid") {
+        else if (iconName === "UserCircleSolid") {
             return UserCircleSolid
         }
-        else if (iconName == "EnvelopeSolid") {
+        else if (iconName === "EnvelopeSolid") {
             return EnvelopeSolid
         }
-        else if (iconName == "Brazil") {
+        else if (iconName === "Brazil") {
             return Brazil
         }
-        else if (iconName == "UnlockSolid") {
+        else if (iconName === "UnlockSolid") {
             return UnlockSolid
         }
     }
