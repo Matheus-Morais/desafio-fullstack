@@ -2,6 +2,8 @@ import React, { useCallback, useRef } from 'react';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
 
+import api from '../../services/api';
+
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import Input from '../../components/Input';
@@ -61,6 +63,26 @@ const SignUp: React.FC = () => {
                 return
             }
         }
+
+        //normalizando phone
+        data.phone = await `55${data.phone.replace(/\D+/g, "")}`
+
+        //Conexão com a api
+        try {
+            await api.post('/new-user', data)
+        } catch (e) {
+            let msgsErrors = '';
+            if (e.response.data.errors) {
+                for (let error of e.response.data.errors) {
+                    msgsErrors = `${msgsErrors}${error}\n`;
+                }
+            }
+
+            alert(msgsErrors);
+            return
+        }
+
+        alert("Usuário cadastrado com sucesso!")
         return
     }, [])
 
