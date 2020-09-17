@@ -1,44 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **Frontend do desafio Full Stack**
 
-## Available Scripts
+Essa aplicação possui uma unica rota, sendo ela a rota raiz.
 
-In the project directory, you can run:
+## Funcionamento
 
-### `yarn start`
+O funcionamento dessa aplicação é bem simples. Basta rodar ```yarn``` ou ```npm install```.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Assim que instalar as dependencias é só rodar ```yarn start``` ou ```npm start```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Observações
 
-### `yarn test`
+- O projeto foi contruído utilizando o modelo ```TypeScript```.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Está sendo utilizado a lib ```unform``` para a criação do formulário. E a lib ```yup``` para a validação dos dados.
 
-### `yarn build`
+- Para criação do template foi criado apenas uma pagina, chamada ```SignUp```. E 4 componentes, sendo eles:
+    - ```Button```: Retorna um botão estilizado com um icon ao lado.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - ```Input```: Retorna um input do formulário, com o icon referente a ele.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    - ```InputMasked```: Retorna um input do fomulário, com uma opção de máscara, que foi utilizado apenas no campo de ```phone```.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    - ```Tooltip```: Retorna uma mensagem de erro ao lado do input que contém uma informação inválida.
 
-### `yarn eject`
+- Para comunicação com a api foi utilizado o ```axios```.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Os erros na validação dos dados são buscados através do yup, e normalizados pela função ```getValidationErrors```, que pega todos os erros e retorna um objeto contendo todas as mensagens principais dos erros.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- O ```unform``` tem uma propriedade chamada ```useField```, que é o responsável por gerenciar um determinado input. E com ele é possível mostrar as informações do input, referente a erro, valor, tipo e etc. Então juntamente com a referência do formulário e o ```yup```, é possível informar a um input que a informação nele está incorreta.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Requisitos
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [x] TypeScript
+- [x] React.js
+- [x] Clean Architecture
+- [x] Docker
+- [ ] Testes automatizados
