@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Form } from '@unform/web';
 
 import Profitfy from '../../assets/logo.png';
 
@@ -35,7 +36,7 @@ export const Logo = styled.img.attrs({
     margin-top: 30px;
 `;
 
-export const Form = styled.div`
+export const FormContainer = styled(Form)`
     display: flex;
     flex-direction: column;
     align-items: center;
