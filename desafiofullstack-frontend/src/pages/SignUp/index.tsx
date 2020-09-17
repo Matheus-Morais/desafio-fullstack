@@ -31,9 +31,9 @@ const SignUp: React.FC = () => {
 
                     <Input name="phone" iconName="Brazil" placeholder="" />
 
-                    <Input name="password" iconName="UnlockSolid" placeholder="Senha" />
+                    <Input name="password" type="password" iconName="UnlockSolid" placeholder="Senha" />
 
-                    <Input name="confirm_password" iconName="UnlockSolid" placeholder="Confirmar senha" />
+                    <Input name="confirm_password" type="password" iconName="UnlockSolid" placeholder="Confirmar senha" />
 
                     <ContainerUseTerms>
                         <Info fontWeight={'normal'} fontSize={'12'} marginBottom={'18'} marginTop={'8'}>
