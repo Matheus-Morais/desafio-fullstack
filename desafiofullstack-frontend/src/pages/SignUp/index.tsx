@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
 
 import Input from '../../components/Input';
+import InputMasked from '../../components/InputMasked';
 import Button from '../../components/Button';
 
 import {
@@ -36,7 +37,7 @@ const SignUp: React.FC = () => {
             name: Yup.string().required('Nome é obrigatório'),
             last_name: Yup.string().required('Sobrenome é obrigatório'),
             email: Yup.string().required('Email é obrigatório').email('Digite um email válido'),
-            phone: Yup.string().required('Telefone é obrigatório').matches(phoneRegExp, 'Telefone não é válido'),
+            phone: Yup.string().required('Telefone é obrigatório'),
             password: Yup.string().min(8, 'Senha deve ter no minimo 8 digitos'),
             confirm_password: Yup.string().min(8, 'Senha deve ter no minimo 8 digitos'),
         })
@@ -72,7 +73,7 @@ const SignUp: React.FC = () => {
 
                     <Input name="email" iconName="EnvelopeSolid" placeholder="Email Pessoal" />
 
-                    <Input name="phone" type="number" iconName="Brazil" placeholder="" />
+                    <InputMasked name="phone" type="text" iconName="Brazil" mask="(99) 9 9999-9999" />
 
                     <Input name="password" type="password" iconName="UnlockSolid" placeholder="Senha" />
 
