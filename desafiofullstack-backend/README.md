@@ -37,8 +37,8 @@ Primeiramente é necessario criar um arquivo ```.env``` na raiz do backend. E ne
 
 ## Requisitos
 
-- [ x ] NodeJs
-- [ x ] PostgreSQL
-- [ x ] Clean Architecture
-- [ x ] Docker
-- [   ] Testes automatizados
+- [x] NodeJs
+- [x] PostgreSQL
+- [x] Clean Architecture
+- [x] Docker
+- [ ] Testes automatizados
